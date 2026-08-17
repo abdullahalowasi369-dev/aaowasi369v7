@@ -22,9 +22,7 @@ import { siteConfig } from "@/data/portfolio";
 /*
  * NAVIGATION / AAO PROFILE
  * ========================
- * This is the ONLY location where social-network links are displayed.
- * Edit URLs in data/portfolio.ts. Do not duplicate social links in Contact/Footer.
- * All six profile URLs are centralized in data/portfolio.ts and are published only in this AAO profile menu.
+ * Centralized navigation bar and profile dropdown.
  */
 const navLinks = [
   { name: "Overview", href: "#top" },
