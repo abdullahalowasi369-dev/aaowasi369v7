@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/data/portfolio";
 
-/* Inline SVG Components — No external library dependencies */
+/* 100% Standalone Inline SVGs - Zero Dependency Risks */
 function IconLinkedin({ className = "w-3.5 h-3.5" }: { className?: string }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
