@@ -7,12 +7,12 @@ import {
   ChevronDown,
   ExternalLink,
   FileText,
-  Globe as Github, // Maps Github to Globe
-  Share2 as Facebook, // Maps Facebook to Share2
-  Instagram, // Clean import for Instagram
-  Briefcase as Linkedin, // Maps Linkedin to Briefcase
+  Globe as Github,
+  Share2 as Facebook,
+  Instagram,
+  Briefcase as Linkedin,
   Menu,
-  MessageCircle, // Explicitly imported for WhatsApp
+  MessageCircle,
   MessageSquare,
   ShieldCheck,
   X,
