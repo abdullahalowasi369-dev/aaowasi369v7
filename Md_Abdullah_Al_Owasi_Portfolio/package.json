@@ -1,0 +1,37 @@
+{
+  "name": "md-abdullah-al-owasi-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "check": "node scripts/preflight.mjs",
+    "prebuild": "node scripts/preflight.mjs",
+    "build": "next build",
+    "postbuild": "node scripts/verify-static-export.mjs",
+    "start": "node scripts/serve-static.mjs",
+    "lint": "eslint .",
+    "sync:copy": "python scripts/sync_content_from_docx.py career-assets/Website_Content_Guide.docx"
+  },
+  "dependencies": {
+    "lucide-react": "1.28.0",
+    "motion": "12.43.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.12",
+    "postcss": "8.5.25",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "npm@10.9.2"
+}

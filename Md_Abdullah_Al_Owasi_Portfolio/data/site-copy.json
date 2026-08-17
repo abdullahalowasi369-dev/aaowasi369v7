@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "identity": "Technology Risk & AI Governance",
+    "headlinePrefix": "Governance systems built to turn",
+    "headlineAccent": "risk into decisions.",
+    "body": "I design the operating logic behind technology risk, control assurance, third-party governance and AI risk: requirements, controls, evidence, ownership, exceptions, remediation, monitoring and residual-risk decisions. The portfolio is built so a reviewer can inspect how the reasoning works, not just read a list of frameworks.",
+    "primaryCta": "Inspect the governance architecture",
+    "secondaryCta": "Review portfolio",
+    "availability": "Open to high-ownership opportunities",
+    "roleLine": "Technology GRC · Security Compliance · TPRM · AI Governance",
+    "portfolioLabel": "Governance portfolio",
+    "portfolioStatus": "Inspectable",
+    "modelLabel": "Signature operating model",
+    "modelText": "Requirement → control → evidence → exception → residual risk → decision."
+  },
+  "executiveValue": {
+    "eyebrow": "Business value",
+    "title": "Built around the decisions serious governance teams own.",
+    "body": "Customer assurance, control operations, technology risk, third-party governance and AI risk all converge on the same problem: turn requirements into evidence-backed decisions that technical and business stakeholders can act on.",
+    "architectureLabel": "Decision architecture",
+    "architectureTitle": "Governance should end in a decision—not a spreadsheet."
+  },
+  "projects": {
+    "eyebrow": "Selected systems",
+    "title": "Governance systems designed to withstand scrutiny.",
+    "body": "Ten systems spanning assurance, technology risk, third-party risk and AI governance. Each shows the operating logic, evidence path, ownership model, exception state and decision structure behind the work."
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "Capabilities connected to evidence.",
+    "body": "Each capability points to a system, artifact, control model or decision structure that can be inspected and discussed in a technical interview."
+  },
+  "about": {
+    "eyebrow": "05 / Operating thesis",
+    "title": "Governance earns its value when it changes decisions.",
+    "body": "My operating thesis is simple: material requirements need accountable controls; controls need evidence; exceptions need treatment; residual risk needs a decision owner. The portfolio applies that logic across assurance, third-party risk and AI governance."
+  },
+  "frameworks": {
+    "eyebrow": "06 / Framework depth",
+    "title": "Standards translated into operating logic.",
+    "body": "Framework knowledge matters when it changes how controls are designed, evidence is collected, ownership is assigned, exceptions are handled and decisions are made. These are the primary lenses behind the portfolio architecture.",
+    "sourceNote": "Primary-source links are attached so the framework basis can be inspected directly."
+  },
+  "contact": {
+    "eyebrow": "Direct conversation",
+    "title": "Bring the governance problem that cannot stay ambiguous.",
+    "body": "I am open to high-ownership opportunities across Technology Risk, GRC, Security Compliance, Third-Party Risk and AI Governance. Send the role, business context and hardest unresolved risk question. My portfolio shows the architecture and decision logic I would bring to the conversation.",
+    "primaryCta": "Start the conversation",
+    "resumeCta": "Review resume",
+    "mandateLabel": "Best-fit mandate",
+    "mandate": "Technology Risk · GRC · Security Compliance · TPRM · AI Governance",
+    "locationLine": "Kuala Lumpur, Malaysia · open to remote and relocation discussions",
+    "assetLine": "Portfolio, resume and evidence workbooks available now"
+  },
+  "footer": {
+    "roleLine": "Technology Risk · GRC · TPRM · AI Governance",
+    "signature": "I architect the systems behind enterprise trust: requirement, control, evidence, exception, residual risk and decision."
+  }
+}
