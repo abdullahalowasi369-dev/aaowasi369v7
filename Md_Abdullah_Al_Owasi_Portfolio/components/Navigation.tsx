@@ -6,13 +6,12 @@ import {
   CheckCircle2,
   ChevronDown,
   ExternalLink,
-  Facebook,
   FileText,
-  Github,
-  Instagram,
-  Linkedin,
+  Globe as Github, // Maps Github to Globe
+  Share2 as Facebook, // Maps Facebook to Share2
+  MessageCircle as Instagram, // Maps Instagram to MessageCircle
+  Briefcase as Linkedin, // Maps Linkedin to Briefcase
   Menu,
-  MessageCircle,
   MessageSquare,
   ShieldCheck,
   X,
