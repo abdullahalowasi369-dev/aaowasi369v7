@@ -1,20 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Briefcase,
-  CheckCircle2,
-  ChevronDown,
-  ExternalLink,
-  FileText,
-  Menu,
-  MessageSquare,
-  ShieldCheck,
-  X as CloseIcon,
-} from "lucide-react";
 import { siteConfig } from "@/data/portfolio";
 
-/* Custom SVG Icons to avoid icon library naming mismatches */
+/* Inline SVG Components — No external library dependencies */
 function IconLinkedin({ className = "w-3.5 h-3.5" }: { className?: string }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -59,6 +48,46 @@ function IconFacebook({ className = "w-3.5 h-3.5" }: { className?: string }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
+function IconChevronDown({ className = "w-3.5 h-3.5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  );
+}
+
+function IconCheckCircle({ className = "w-2.5 h-2.5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function IconExternalLink({ className = "w-2.5 h-2.5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18.75m0 0v5.25m0-5.25L10.5 13.5M9 6H6.75C5.784 6 5 6.784 5 7.75v10.5C5 19.216 5.784 20 6.75 20h10.5c.966 0 1.75-.784 1.75-1.75V15" />
+    </svg>
+  );
+}
+
+function IconMenu({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  );
+}
+
+function IconClose({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
   );
 }
@@ -137,10 +166,10 @@ export default function Navigation() {
               <div className="hidden sm:block">
                 <div className="flex items-center space-x-1 text-sm font-bold tracking-tight text-white transition-colors group-hover:text-emerald-300">
                   <span>{siteConfig.name}</span>
-                  <ChevronDown size={14} className={`text-slate-400 transition-transform duration-200 ${profileOpen ? "rotate-180 text-emerald-400" : ""}`} />
+                  <IconChevronDown className={`h-3.5 w-3.5 text-slate-400 transition-transform duration-200 ${profileOpen ? "rotate-180 text-emerald-400" : ""}`} />
                 </div>
                 <div className="flex items-center space-x-1.5 font-mono text-[10px] text-emerald-400">
-                  <CheckCircle2 size={10} />
+                  <IconCheckCircle className="h-2.5 w-2.5" />
                   <span>Technology Risk · GRC · TPRM · AI Governance</span>
                 </div>
               </div>
@@ -162,7 +191,6 @@ export default function Navigation() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center space-x-1.5 rounded-lg bg-emerald-400 py-2 text-xs font-bold text-slate-950 transition-colors hover:bg-emerald-300"
                   >
-                    <FileText size={13} />
                     <span>Resume</span>
                   </a>
                   <a
@@ -170,7 +198,6 @@ export default function Navigation() {
                     onClick={() => setProfileOpen(false)}
                     className="flex items-center justify-center space-x-1.5 rounded-lg border border-white/10 bg-white/10 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/15"
                   >
-                    <MessageSquare size={13} />
                     <span>Contact</span>
                   </a>
                 </div>
@@ -193,7 +220,7 @@ export default function Navigation() {
                         </span>
                         <span className="type-label inline-flex items-center gap-1 text-[10px] text-slate-500">
                           {link.detail}
-                          <ExternalLink size={10} />
+                          <IconExternalLink className="h-2.5 w-2.5" />
                         </span>
                       </a>
                     );
@@ -225,7 +252,6 @@ export default function Navigation() {
               href="#contact"
               className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 px-4 py-2 text-xs font-bold text-slate-950 transition-all hover:shadow-[0_0_20px_rgba(52,211,153,0.4)]"
             >
-              <Briefcase size={14} />
               <span>Discuss a role</span>
             </a>
           </div>
@@ -239,7 +265,7 @@ export default function Navigation() {
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-navigation"
             >
-              {mobileMenuOpen ? <CloseIcon size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <IconClose className="h-5 w-5" /> : <IconMenu className="h-5 w-5" />}
             </button>
           </div>
         </div>
@@ -263,7 +289,6 @@ export default function Navigation() {
           <div className="space-y-3 border-t border-white/10 pt-4">
             <div className="type-label flex items-center justify-between px-1 text-xs text-emerald-400">
               <span className="flex items-center space-x-1">
-                <ShieldCheck size={14} />
                 <span>Open to opportunities</span>
               </span>
               <span className="text-slate-400">Remote · Relocation</span>
@@ -274,7 +299,6 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center space-x-2 rounded-xl bg-emerald-400 py-3 text-xs font-bold text-slate-950 transition-colors hover:bg-emerald-300"
             >
-              <FileText size={15} />
               <span>Resume</span>
             </a>
           </div>
