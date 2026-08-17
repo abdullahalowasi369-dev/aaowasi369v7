@@ -2,6 +2,20 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import fs from "node:fs";
+import path from "node:path";
+
+const navigationPath = path.join(process.cwd(), "components", "Navigation.tsx");
+
+if (fs.existsSync(navigationPath)) {
+  const content = fs.readFileSync(navigationPath, "utf-8");
+  if (content.includes("MessageCircle")) {
+    console.error("❌ Preflight Error: Found unresolved 'MessageCircle' reference in Navigation.tsx");
+    process.exit(1);
+  }
+}
+
+console.log("✅ Preflight check passed.");
 
 const root = process.cwd();
 const errors = [];
