@@ -9,7 +9,7 @@ import {
   FileText,
   Globe as Github, // Maps Github to Globe
   Share2 as Facebook, // Maps Facebook to Share2
-  MessageCircle as Instagram, // Added Instagram alias
+  Instagram, // Imported directly without shadowing MessageCircle
   Briefcase as Linkedin, // Maps Linkedin to Briefcase
   Menu,
   MessageCircle,
@@ -84,14 +84,28 @@ export default function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between sm:h-20">
           <div className="relative" ref={profileRef}>
-            <button type="button" onClick={() => setProfileOpen((value) => !value)} className="group flex items-center space-x-3 text-left focus:outline-none" aria-expanded={profileOpen} aria-controls="candidate-profile">
+            <button
+              type="button"
+              onClick={() => setProfileOpen((value) => !value)}
+              className="group flex items-center space-x-3 text-left focus:outline-none"
+              aria-expanded={profileOpen}
+              aria-controls="candidate-profile"
+            >
               <div className="relative">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-400 text-xs font-black text-slate-950 shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-all group-hover:bg-emerald-300">AAO</span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-400 text-xs font-black text-slate-950 shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-all group-hover:bg-emerald-300">
+                  AAO
+                </span>
                 <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-slate-950 bg-emerald-400" aria-hidden="true" />
               </div>
               <div className="hidden sm:block">
-                <div className="flex items-center space-x-1 text-sm font-bold tracking-tight text-white transition-colors group-hover:text-emerald-300"><span>{siteConfig.name}</span><ChevronDown size={14} className={`text-slate-400 transition-transform duration-200 ${profileOpen ? "rotate-180 text-emerald-400" : ""}`} /></div>
-                <div className="flex items-center space-x-1.5 font-mono text-[10px] text-emerald-400"><CheckCircle2 size={10} /><span>Technology Risk · GRC · TPRM · AI Governance</span></div>
+                <div className="flex items-center space-x-1 text-sm font-bold tracking-tight text-white transition-colors group-hover:text-emerald-300">
+                  <span>{siteConfig.name}</span>
+                  <ChevronDown size={14} className={`text-slate-400 transition-transform duration-200 ${profileOpen ? "rotate-180 text-emerald-400" : ""}`} />
+                </div>
+                <div className="flex items-center space-x-1.5 font-mono text-[10px] text-emerald-400">
+                  <CheckCircle2 size={10} />
+                  <span>Technology Risk · GRC · TPRM · AI Governance</span>
+                </div>
               </div>
             </button>
 
@@ -105,15 +119,47 @@ export default function Navigation() {
                 </div>
 
                 <div className="my-3.5 grid grid-cols-2 gap-2">
-                  <a href="/career-assets/Md_Abdullah_Al_Owasi_Resume.docx" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-1.5 rounded-lg bg-emerald-400 py-2 text-xs font-bold text-slate-950 transition-colors hover:bg-emerald-300"><FileText size={13} /><span>Resume</span></a>
-                  <a href="#contact" onClick={() => setProfileOpen(false)} className="flex items-center justify-center space-x-1.5 rounded-lg border border-white/10 bg-white/10 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/15"><MessageSquare size={13} /><span>Contact</span></a>
+                  <a
+                    href="/career-assets/Md_Abdullah_Al_Owasi_Resume.docx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center space-x-1.5 rounded-lg bg-emerald-400 py-2 text-xs font-bold text-slate-950 transition-colors hover:bg-emerald-300"
+                  >
+                    <FileText size={13} />
+                    <span>Resume</span>
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => setProfileOpen(false)}
+                    className="flex items-center justify-center space-x-1.5 rounded-lg border border-white/10 bg-white/10 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/15"
+                  >
+                    <MessageSquare size={13} />
+                    <span>Contact</span>
+                  </a>
                 </div>
 
                 <p className="type-label mb-2 text-[10px] font-semibold text-slate-500">Profiles</p>
                 <div className="space-y-1">
                   {professionalLinks.map((link) => {
                     const Icon = link.icon;
-                    return <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between rounded-lg p-2 text-xs text-slate-300 transition-colors hover:bg-white/[0.05] hover:text-white"><span className="flex items-center gap-2 font-medium"><Icon size={13} className="text-emerald-400" />{link.name}</span><span className="type-label inline-flex items-center gap-1 text-[10px] text-slate-500">{link.detail}<ExternalLink size={10} /></span></a>;
+                    return (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between rounded-lg p-2 text-xs text-slate-300 transition-colors hover:bg-white/[0.05] hover:text-white"
+                      >
+                        <span className="flex items-center gap-2 font-medium">
+                          <Icon size={13} className="text-emerald-400" />
+                          {link.name}
+                        </span>
+                        <span className="type-label inline-flex items-center gap-1 text-[10px] text-slate-500">
+                          {link.detail}
+                          <ExternalLink size={10} />
+                        </span>
+                      </a>
+                    );
                   })}
                 </div>
               </div>
@@ -123,21 +169,77 @@ export default function Navigation() {
           <nav className="hidden items-center space-x-1 rounded-full border border-white/10 bg-white/[0.03] p-1.5 lg:flex" aria-label="Primary navigation">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace("#", "");
-              return <a key={link.name} href={link.href} className={`rounded-full px-2.5 py-1.5 text-xs font-medium transition-all duration-200 lg:px-3.5 ${isActive ? "bg-emerald-400 font-bold text-slate-950 shadow-[0_0_12px_rgba(52,211,153,0.3)]" : "text-slate-300 hover:bg-white/5 hover:text-white"}`}>{link.name}</a>;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`rounded-full px-2.5 py-1.5 text-xs font-medium transition-all duration-200 lg:px-3.5 ${
+                    isActive ? "bg-emerald-400 font-bold text-slate-950 shadow-[0_0_12px_rgba(52,211,153,0.3)]" : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
             })}
           </nav>
 
-          <div className="hidden items-center space-x-3 lg:flex"><a href="#contact" className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 px-4 py-2 text-xs font-bold text-slate-950 transition-all hover:shadow-[0_0_20px_rgba(52,211,153,0.4)]"><Briefcase size={14} /><span>Discuss a role</span></a></div>
-          <div className="flex items-center space-x-2 lg:hidden"><button type="button" onClick={() => setMobileMenuOpen((value) => !value)} className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle navigation menu" aria-expanded={mobileMenuOpen} aria-controls="mobile-navigation">{mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}</button></div>
+          <div className="hidden items-center space-x-3 lg:flex">
+            <a
+              href="#contact"
+              className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 px-4 py-2 text-xs font-bold text-slate-950 transition-all hover:shadow-[0_0_20px_rgba(52,211,153,0.4)]"
+            >
+              <Briefcase size={14} />
+              <span>Discuss a role</span>
+            </a>
+          </div>
+
+          <div className="flex items-center space-x-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((value) => !value)}
+              className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-slate-300 hover:text-white focus:outline-none"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {mobileMenuOpen && (
         <div id="mobile-navigation" className="space-y-4 border-b border-white/10 bg-slate-950/95 px-4 pb-6 pt-4 backdrop-blur-2xl lg:hidden">
-          <div className="flex flex-col space-y-2">{navLinks.map((link) => <a key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-emerald-400"><span>{link.name}</span><span className="type-label text-[10px] text-slate-500">→</span></a>)}</div>
+          <div className="flex flex-col space-y-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-white/5 hover:text-emerald-400"
+              >
+                <span>{link.name}</span>
+                <span className="type-label text-[10px] text-slate-500">→</span>
+              </a>
+            ))}
+          </div>
           <div className="space-y-3 border-t border-white/10 pt-4">
-            <div className="type-label flex items-center justify-between px-1 text-xs text-emerald-400"><span className="flex items-center space-x-1"><ShieldCheck size={14} /><span>Open to opportunities</span></span><span className="text-slate-400">Remote · Relocation</span></div>
-            <a href="/career-assets/Md_Abdullah_Al_Owasi_Resume.docx" target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center space-x-2 rounded-xl bg-emerald-400 py-3 text-xs font-bold text-slate-950 transition-colors hover:bg-emerald-300"><FileText size={15} /><span>Resume</span></a>
+            <div className="type-label flex items-center justify-between px-1 text-xs text-emerald-400">
+              <span className="flex items-center space-x-1">
+                <ShieldCheck size={14} />
+                <span>Open to opportunities</span>
+              </span>
+              <span className="text-slate-400">Remote · Relocation</span>
+            </div>
+            <a
+              href="/career-assets/Md_Abdullah_Al_Owasi_Resume.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center space-x-2 rounded-xl bg-emerald-400 py-3 text-xs font-bold text-slate-950 transition-colors hover:bg-emerald-300"
+            >
+              <FileText size={15} />
+              <span>Resume</span>
+            </a>
           </div>
         </div>
       )}
