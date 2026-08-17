@@ -9,10 +9,10 @@ import {
   FileText,
   Globe as Github, // Maps Github to Globe
   Share2 as Facebook, // Maps Facebook to Share2
-  Instagram, // Imported directly without shadowing MessageCircle
+  Instagram, // Clean import for Instagram
   Briefcase as Linkedin, // Maps Linkedin to Briefcase
   Menu,
-  MessageCircle,
+  MessageCircle, // Explicitly imported for WhatsApp
   MessageSquare,
   ShieldCheck,
   X,
