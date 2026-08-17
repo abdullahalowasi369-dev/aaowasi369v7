@@ -11,18 +11,12 @@ import {
   Instagram,
   Linkedin,
   Menu,
-  MessageCircle,
   MessageSquare,
   ShieldCheck,
   X,
 } from "lucide-react";
 import { siteConfig } from "@/data/portfolio";
 
-/*
- * NAVIGATION / AAO PROFILE
- * ========================
- * Centralized navigation bar and profile dropdown.
- */
 const navLinks = [
   { name: "Overview", href: "#top" },
   { name: "Value", href: "#value" },
@@ -36,7 +30,7 @@ const professionalLinks = [
   { name: "LinkedIn", href: siteConfig.social.linkedin, detail: "Professional profile", icon: Linkedin },
   { name: "GitHub", href: siteConfig.social.github, detail: "Code & repositories", icon: Globe },
   { name: "X", href: siteConfig.social.x, detail: "Updates & writing", icon: X },
-  { name: "WhatsApp", href: siteConfig.social.whatsapp, detail: "Direct message", icon: MessageCircle },
+  { name: "WhatsApp", href: siteConfig.social.whatsapp, detail: "Direct message", icon: MessageSquare },
   { name: "Instagram", href: siteConfig.social.instagram, detail: "Personal profile", icon: Instagram },
   { name: "Facebook", href: siteConfig.social.facebook, detail: "Personal profile", icon: Globe },
 ] as const;
