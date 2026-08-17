@@ -9,9 +9,10 @@ import {
   FileText,
   Globe as Github, // Maps Github to Globe
   Share2 as Facebook, // Maps Facebook to Share2
-  MessageCircle as Instagram, // Maps Instagram to MessageCircle
+  MessageCircle as Instagram, // Added Instagram alias
   Briefcase as Linkedin, // Maps Linkedin to Briefcase
   Menu,
+  MessageCircle,
   MessageSquare,
   ShieldCheck,
   X,
